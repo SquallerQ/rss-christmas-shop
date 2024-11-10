@@ -324,7 +324,6 @@ body {
   text-align: center;
   color: #fff;
   letter-spacing: 0.02em;
-
 }
 .slider__card-image {
   margin-left: 20px;
@@ -350,9 +349,6 @@ body {
   border-radius: 20px;
 
   transition: background-color 0.6s;
-
-
-  /* border: none; */
 }
 .slider__buttons-left {
   background-image: url('../../assets/icons/arrow-left.svg');
@@ -374,6 +370,96 @@ body {
 .slider__buttons-left:hover {
   /* background-image: url('../../assets/icons/arrow-left--active.svg'); */
 }
+/* best-gifts styles */
+.best-gifts {
+  background-color: #ff4646;
+  background-image: url('../../assets/images/bg-snow.png');
+  background-size: cover;
+  background-position: center center;
+}
+.best-gifts__inner {
+  padding: 60px 0;
+}
+.best-gifts__subtitle {
+  margin-bottom: 12px;
+  font-family: "Allura", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+   
+  line-height: 100%;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: #fff;
+}
+.best-gifts__title {
+  margin-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+
+  line-height: 152%;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+}
+.best-gifts__cards {
+  display: flex;
+  gap: 12px;
+}
+.best-gifts__card {
+  border-radius: 20px;
+  background-color: #ecf3f8;
+  transition: all .3s ease;
+}
+.best-gifts__card:hover {
+  cursor: pointer;
+  transition: all .3s ease;
+}
+.best-gifts__card:hover .best-gifts__card-title {
+  color: #ff4646;
+  transition: all .3s ease;
+}
+.best-gifts__card-image {
+  border-radius: 20px 20px 0 0px ;
+  background-color: #ecf3f8;
+}
+.best-gifts__card-info {
+  min-height: 112px;
+  padding-top: 20px;
+  padding-left: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+.best-gifts__card-subtitle {
+  margin-bottom: 8px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+
+  line-height: 130%;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #4361ff;
+}
+.best-gifts__card-subtitle--health {
+  color: #06a44f;
+}
+.best-gifts__card-subtitle--harmony {
+  color: #ff43f7;
+}
+.best-gifts__card-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+
+  line-height: 152%;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #181c29;
+}
+
+
 
 footer {
   background-color: blue;
