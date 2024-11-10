@@ -82,7 +82,7 @@ main {
   font-display: swap;
 }
 @font-face {
-  font-family: 'Allura-Regular';
+  font-family: 'Allura';
   src: url('../../assets/fonts/Allura-Regular.woff2') format("woff2"),
        url('../../assets/fonts/Allura-Regular.woff') format("woff");
   font-weight: normal;
@@ -170,7 +170,7 @@ body {
 
 }
 .hero__content-text {
-  font-family: "Allura-Regular", sans-serif;
+  font-family: "Allura", sans-serif;
   font-weight: 400;
   font-size: 24px;
 
@@ -211,6 +211,62 @@ body {
   background-color: #fff;
   transition: all .3s ease;
 }
+/* about styles */
+.about {
+  background-color: #ff4646;
+  padding: 60px 0;
+}
+.about__inner {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 20px;
+}
+.about__content {
+  width: 50%;
+  padding: 100px 152px 100px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+
+  background-color: #fff;
+  border-radius: 20px 0 0 20px;
+}
+.about__content-subtitle {
+  font-family: "Allura", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+
+  line-height: 100%;
+  letter-spacing: 0.05em;
+  color: #ff4646;
+}
+.about__content-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+
+  line-height: 152%;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: #181c29;
+}
+.about__content-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+
+  letter-spacing: 1px;
+  line-height: 148%;
+  color: #181c29;
+}
+.about__image img{
+  border-radius: 20px;
+}
+
+
+
 
 footer {
   background-color: blue;
