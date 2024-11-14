@@ -11,6 +11,7 @@
 
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <!--SVG Sprite-->
   <svg style="display: none;">
@@ -21,14 +22,14 @@
           stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
       </g>
     </symbol>
-  
+
     <symbol id="telegram" viewBox="0 0 24 24">
       <g>
         <path d="M21 5L2 12.5L9 13.5M21 5L18.5 20L9 13.5M21 5L9 13.5M9 13.5V19L12.2488 15.7229" stroke-width="1.5"
           stroke-linecap="round" stroke-linejoin="round" />
       </g>
     </symbol>
-  
+
     <symbol id="instagram" viewBox="0 0 24 24">
       <g>
         <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,7 +43,7 @@
         </svg>
       </g>
     </symbol>
-  
+
     <symbol id="x" viewBox="0 0 24 24">
       <g>
         <path
@@ -56,6 +57,7 @@
     <div class="container__1440">
       <div class="header__wrapper">
         <div class="container">
+
           <div class="header__inner">
             <a href="../../pages/main/index.html">
               <div class="header__logo">
@@ -67,14 +69,14 @@
               <nav class="header__menu-list">
                 <ul class="header__menu-items">
 
-                  <li class="header__menu-item">
-                    <a href="../gifts/gifts.html" class="header__menu-link">Gifts</a>
+                  <li class="header__menu-item header__menu-item--active">
+                    Gifts
                   </li>
                   <li class="header__menu-item">
-                    <a href="#about" class="header__menu-link">About</a>
+                    <a href="../main/index.html#about" class="header__menu-link">About</a>
                   </li>
                   <li class="header__menu-item">
-                    <a href="#best-gifts" class="header__menu-link">Best</a>
+                    <a href="../main/index.html#best-gifts" class="header__menu-link">Best</a>
                   </li>
                   <li class="header__menu-item">
                     <a href="#footer" class="header__menu-link">Contacts</a>
@@ -83,177 +85,145 @@
               </nav>
             </div>
 
+
           </div>
         </div>
-
       </div>
     </div>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="gifts">
       <div class="container__1440">
-        <div class="hero__wrapper">
-
-
-          <div class="hero__content">
-            <p class="hero__content-text">Merry Christmas</p>
-            <h1 class="hero__content-title">Gift yourself the magic of new possibilities</h1>
-            <a href="../gifts/gifts.html" class="hero__content-link">Explore Magical Gifts</a>
-            <p class="hero__content-text">and Happy New Year</p>
-          </div>
-
-        </div>
-      </div>
-
-    </section>
-    <section class="about" id="about">
-      <div class="container__1440">
-        <div class="about__wrapper">
+        <div class="gifts__wrapper">
           <div class="container">
-            <div class="about__inner">
-              <div class="about__content">
-                <p class="about__content-subtitle">About</p>
-                <h2 class="about__content-title">Unleash your inner superhero!</h2>
-                <p class="about__content-text">This New Year marks the beginning of your journey to inner harmony and
-                  new
-                  strengths. We offer unique gifts that will
-                  help you improve your life.</p>
+            <div class="gifts__inner">
+              <h1 class="gifts__title">Achieve health, harmony, and inner strength</h1>
+              <div class="gift__tabs">
+                <button class="gift__tab gift__tab--active" disabled>All</button>
+                <button class="gift__tab">for work</button>
+                <button class="gift__tab">for health</button>
+                <button class="gift__tab">for harmony</button>
               </div>
-              <div class="about__image">
-                <img src="../../assets/images/santa.png" alt="santa img">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="slider">
-      <div class="container__1440">
-        <div class="slider__wrapper">
-          <div class="container">
-
-            <div class="slider__inner">
-              <p class="slider__subtitle">Become Happier!</p>
-              <h2 class="slider__title">in the new 2025</h2>
-              <div class="slider__container">
-                <div class="slider__cards">
-                  <div class="slider__card">
-                    <p class="slider__card-title">Live</p>
-                    <div class="slider__card-image">
-                      <img src="../../assets/images/snowman.png" alt="slider img">
-                    </div>
-                  </div>
-                  <div class="slider__card">
-                    <p class="slider__card-title">create</p>
-                    <div class="slider__card-image">
-                      <img src="../../assets/images/christmas-trees.png" alt="slider img">
-                    </div>
-                  </div>
-                  <div class="slider__card">
-                    <p class="slider__card-title">Love</p>
-                    <div class="slider__card-image">
-                      <img src="../../assets/images/christmas-tree-ball.png" alt="slider img">
-                    </div>
-                  </div>
-                  <div class="slider__card">
-                    <p class="slider__card-title">Dream</p>
-                    <div class="slider__card-image">
-                      <img src="../../assets/images/fairytale-house.png" alt="slider img">
-                    </div>
-                  </div>
-                </div>
-                <div class="slider__buttons">
-                  <button class="slider__button slider__buttons-left"></button>
-                  <button class="slider__button slider__buttons-right"></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="best-gifts" id="best-gifts">
-      <div class="container__1440">
-        <div class="best-gifts__wrapper">
-          <div class="container">
-            <div class="best-gifts__inner">
-              <p class="best-gifts__subtitle">Best Gifts</p>
-              <h2 class="best-gifts__title">especially for you</h2>
-              <div class="best-gifts__cards">
-                <div class="best-gifts__card">
-                  <div class="best-gifts__card-image">
+              <div class="gifts__cards">
+                <div class="gifts__card">
+                  <div class="gifts__card-image">
                     <img src="../../assets/images/gift-for-work.png" alt="card img">
                   </div>
-                  <div class="best-gifts__card-info">
+                  <div class="gifts__card-info">
 
-                    <h4 class="best-gifts__card-subtitle">For work</h4>
-                    <h3 class="best-gifts__card-title">Console.log Guru</h3>
+                    <h4 class="gifts__card-subtitle">For work</h4>
+                    <h3 class="gifts__card-title">Console.log Guru</h3>
                   </div>
                 </div>
-                <div class="best-gifts__card">
-                  <div class="best-gifts__card-image">
+                <div class="gifts__card">
+                  <div class="gifts__card-image">
                     <img src="../../assets/images/gift-for-health.png" alt="card img">
                   </div>
-                  <div class="best-gifts__card-info">
+                  <div class="gifts__card-info">
 
-                    <h4 class="best-gifts__card-subtitle best-gifts__card-subtitle--health">For health</h4>
-                    <h3 class="best-gifts__card-title">Hydration Bot</h3>
+                    <h4 class="gifts__card-subtitle gifts__card-subtitle--health">For health</h4>
+                    <h3 class="gifts__card-title">Step Master</h3>
                   </div>
                 </div>
-                <div class="best-gifts__card">
-                  <div class="best-gifts__card-image">
+                <div class="gifts__card">
+                  <div class="gifts__card-image">
                     <img src="../../assets/images/gift-for-work.png" alt="card img">
                   </div>
-                  <div class="best-gifts__card-info">
-                    <h4 class="best-gifts__card-subtitle">For work</h4>
-                    <h3 class="best-gifts__card-title">Merge Master</h3>
+                  <div class="gifts__card-info">
+                    <h4 class="gifts__card-subtitle">For work</h4>
+                    <h3 class="gifts__card-title">Bug Magnet</h3>
                   </div>
                 </div>
-                <div class="best-gifts__card">
-                  <div class="best-gifts__card-image">
+                <div class="gifts__card">
+                  <div class="gifts__card-image">
+                    <img src="../../assets/images/gift-for-work.png" alt="card img">
+                  </div>
+                  <div class="gifts__card-info">
+                    <h4 class="gifts__card-subtitle">For work</h4>
+                    <h3 class="gifts__card-title">Shortcut Cheater</h3>
+                  </div>
+                </div>
+                <div class="gifts__card">
+                  <div class="gifts__card-image">
+                    <img src="../../assets/images/gift-for-health.png" alt="card img">
+                  </div>
+                  <div class="gifts__card-info">
+
+                    <h4 class="gifts__card-subtitle gifts__card-subtitle--health">For health</h4>
+                    <h3 class="gifts__card-title">Posture Levitation</h3>
+                  </div>
+                </div>
+                <div class="gifts__card">
+                  <div class="gifts__card-image">
                     <img src="../../assets/images/gift-for-harmony.png" alt="card img">
                   </div>
-                  <div class="best-gifts__card-info">
-                    <h4 class="best-gifts__card-subtitle best-gifts__card-subtitle--harmony">For harmony</h4>
-                    <h3 class="best-gifts__card-title">Spontaneous Coding Philosopher</h3>
+                  <div class="gifts__card-info">
+                    <h4 class="gifts__card-subtitle gifts__card-subtitle--harmony">For harmony</h4>
+                    <h3 class="gifts__card-title">Bug Acceptance Guru</h3>
+                  </div>
+                </div>
+                <div class="gifts__card">
+                  <div class="gifts__card-image">
+                    <img src="../../assets/images/gift-for-health.png" alt="card img">
+                  </div>
+                  <div class="gifts__card-info">
+
+                    <h4 class="gifts__card-subtitle gifts__card-subtitle--health">For health</h4>
+                    <h3 class="gifts__card-title">Snack Resister</h3>
+                  </div>
+                </div>
+                <div class="gifts__card">
+                  <div class="gifts__card-image">
+                    <img src="../../assets/images/gift-for-harmony.png" alt="card img">
+                  </div>
+                  <div class="gifts__card-info">
+                    <h4 class="gifts__card-subtitle gifts__card-subtitle--harmony">For harmony</h4>
+                    <h3 class="gifts__card-title">Error Laugher</h3>
+                  </div>
+                </div>
+                <div class="gifts__card">
+                  <div class="gifts__card-image">
+                    <img src="../../assets/images/gift-for-health.png" alt="card img">
+                  </div>
+                  <div class="gifts__card-info">
+
+                    <h4 class="gifts__card-subtitle gifts__card-subtitle--health">For health</h4>
+                    <h3 class="gifts__card-title">Hydration Bot</h3>
+                  </div>
+                </div>
+                <div class="gifts__card">
+                  <div class="gifts__card-image">
+                    <img src="../../assets/images/gift-for-work.png" alt="card img">
+                  </div>
+                  <div class="gifts__card-info">
+                    <h4 class="gifts__card-subtitle">For work</h4>
+                    <h3 class="gifts__card-title">Merge Master</h3>
+                  </div>
+                </div>
+                <div class="gifts__card">
+                  <div class="gifts__card-image">
+                    <img src="../../assets/images/gift-for-harmony.png" alt="card img">
+                  </div>
+                  <div class="gifts__card-info">
+                    <h4 class="gifts__card-subtitle gifts__card-subtitle--harmony">For harmony</h4>
+                    <h3 class="gifts__card-title">Joy Charger</h3>
+                  </div>
+                </div>
+                <div class="gifts__card">
+                  <div class="gifts__card-image">
+                    <img src="../../assets/images/gift-for-harmony.png" alt="card img">
+                  </div>
+                  <div class="gifts__card-info">
+                    <h4 class="gifts__card-subtitle gifts__card-subtitle--harmony">For harmony</h4>
+                    <h3 class="gifts__card-title">Spontaneous Coding Philosopher</h3>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-    <section class="cta">
-      <div class="container__1440">
-        <div class="cta__wrapper">
-          <div class="cta__content">
-            <h2 class="cta__content-title">Ready to start your journey to a better version of yourself?</h2>
-            <a href="../gifts/gifts.html" class="cta__content-link">Explore Magical Gifts</a>
-            <p class="cta__content-text">The New Year is Coming Soon...</p>
-            <div class="cta__content-timer cta__timer-items">
-              <div class="cta__timer-item">
-                <div class="cta__timer-number">47</div>
-                <div class="cta__timer-word">Days</div>
-              </div>
-              <div class="cta__timer-item">
-                <div class="cta__timer-number">5</div>
-                <div class="cta__timer-word">Hours</div>
-              </div>
-              <div class="cta__timer-item">
-                <div class="cta__timer-number">34</div>
-                <div class="cta__timer-word">Minutes</div>
-              </div>
-              <div class="cta__timer-item">
-                <div class="cta__timer-number">12</div>
-                <div class="cta__timer-word">Seconds</div>
-              </div>
-            </div>
           </div>
-        </div>
-      </div>
-
+          </div>
     </section>
   </main>
   <footer class="footer" id="footer">
@@ -316,8 +286,8 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
+        </div>
+        </div>
 
   </footer>
   <script src="script.js"></script>
