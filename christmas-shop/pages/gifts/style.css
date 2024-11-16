@@ -223,10 +223,12 @@ body {
   color: #fff;
 
   cursor: pointer;
+  transition: all .5s ease;
 }
 .gift__tab:hover {
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 0.2);
+  transition: all .5s ease;
 }
 .gift__tab--active {
   pointer-events: none;
@@ -243,15 +245,15 @@ body {
   flex: 1 1 310px;
   border-radius: 20px;
   background-color: #ecf3f8;
-  transition: all .3s ease;
+  transition: all .5s ease;
 }
 .gifts__card:hover {
   cursor: pointer;
-  transition: all .3s ease;
+  transition: all .5s ease;
 }
 .gifts__card:hover .gifts__card-title {
   color: #ff4646;
-  transition: all .3s ease;
+  transition: all .5s ease;
 }
 .gifts__card-image {
   border-radius: 20px 20px 0 0px ;

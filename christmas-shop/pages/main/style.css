@@ -229,13 +229,13 @@ body {
   background-color: #181c29;
   border-radius: 20px;
   border: none;
-  transition: all .3s ease;
+  transition: all .5s ease;
 }
 .hero__content-link:hover {
   cursor: pointer;
   color: #181c29;
   background-color: #fff;
-  transition: all .3s ease;
+  transition: all .5s ease;
 }
 /* about styles */
 .about {
@@ -534,7 +534,7 @@ body {
   background-color: #181c29;
   border-radius: 20px;
   border: none;
-  transition: all .3s ease;
+  transition: all .5s ease;
 }
 .cta__content-text {
   margin-bottom: 10px;
@@ -550,7 +550,7 @@ body {
   cursor: pointer;
   color: #181c29;
   background-color: #fff;
-  transition: all .3s ease;
+  transition: all .5s ease;
 }
 .cta__timer-items {
   padding: 10px 12px;
