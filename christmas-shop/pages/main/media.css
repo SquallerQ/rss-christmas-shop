@@ -1,0 +1,26 @@
+.burger-menu {
+  display: none;
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0 8px;
+  }
+  .header__menu-items {
+    display: none;
+  }
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+
+    gap: 8px;
+    width: 40px;
+    height: 40px;
+  }
+  .burger-menu span {
+    width: 22px;
+    height: 2px;
+    background-color: #181c29;
+  }
+}
