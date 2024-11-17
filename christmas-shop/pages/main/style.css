@@ -568,7 +568,7 @@ body {
 .cta__timer-item:not(:first-child):after {
   content: '';
   position: absolute;
-  background-image: url('../../assets/icons/separator.svg');
+  background-image: url('../../assets/icons/separator-icon.svg');
   background-repeat: no-repeat;
   top: 13px;
   right: 0px;
