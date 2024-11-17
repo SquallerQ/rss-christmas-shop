@@ -1,3 +1,4 @@
+/* burger */
 .burger-menu {
   display: none;
 }
@@ -21,7 +22,7 @@
     background-color: #181c29;
   }
 }
-
+/* screen > w768 */
 @media (max-width: 1200px) {
   .container {
     padding: 0 8px;
@@ -53,4 +54,24 @@
     margin-left: 0;
   }
 }
+/* screen > w380 */
+@media (max-width: 600px) {
+  .about__inner {
+    flex-direction: column;
+  }
+  .about__content {
+    padding: 60px 20px;
+    width: 100%;
+  }
+  .about__image {
+    width: 100%;
+  }
+  .best-gifts__cards {
+    padding: 0 27px;
+  }
+  .best-gifts__card {
+    flex: 0 1 100%
+  }
+}
+
 
