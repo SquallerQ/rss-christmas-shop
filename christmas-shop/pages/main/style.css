@@ -292,7 +292,12 @@ body {
   line-height: 24px;
   color: #181c29;
 }
+.about__image {
+  width: 50%;
+}
 .about__image img{
+  object-fit: cover;
+    height: 528px;
   border-radius: 20px;
 }
 /* slider styles */
