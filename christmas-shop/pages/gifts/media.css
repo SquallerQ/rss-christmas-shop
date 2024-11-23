@@ -1,0 +1,48 @@
+/* burger */
+.burger-menu {
+  display: none;
+}
+@media (max-width: 768px) {
+  .header__menu-items {
+    display: none;
+  }
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+
+    gap: 8px;
+    width: 40px;
+    height: 40px;
+  }
+  .burger-menu span {
+    width: 22px;
+    height: 2px;
+    background-color: #181c29;
+  }
+}
+/* screen > w768 */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 8px;
+  }
+}
+@media (max-width: 1100px) {
+  .gifts__cards {
+    padding: 0 60px;
+  }
+  .footer__cards {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .footer__card {
+    width: 100%;
+  }
+  .footer__card:nth-child(2) {
+    margin-left: 0;
+  }
+  .footer__card:nth-child(3) {
+    margin-left: 0;
+  }
+}
