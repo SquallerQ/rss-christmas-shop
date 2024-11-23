@@ -46,3 +46,17 @@
     margin-left: 0;
   }
 }
+@media (max-width: 600px) {
+  .gift__tabs {
+    gap: 0;
+  }
+  .gift__tab {
+    padding: 12px 8px;
+  }
+  .gifts__cards {
+    padding: 0 27px;
+  }
+  .gifts__card {
+    flex: 0 1 100%
+  }
+}
