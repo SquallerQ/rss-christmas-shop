@@ -60,3 +60,50 @@
     flex: 0 1 100%
   }
 }
+@media (hover: none) and (pointer: coarse) {
+  /* Menu buttons */
+  .header__menu-item .header__menu-link:hover {
+    color: #181c29; 
+    background-color: transparent;
+    transition: none;
+    cursor: default;
+  }
+  /* Gift tab */
+  .gift__tab:hover {
+    background: transparent;
+    transition: none;
+    cursor: default;
+  }
+  /* Gift cards and footer cards */
+  .gifts__card:hover,
+  .gifts__card:hover .gifts__card-title,
+  .footer__card:hover .footer__card-subtitle,
+  .footer__card:hover .footer__card-title,
+  .footer__info-subtitle:hover {
+    color: #181c29; 
+    transition: none;
+    cursor: default;
+  }
+  /* SVG icons */
+  .footer__info-icon:hover .footer__info-icon--active {
+    stroke: #181c29; 
+    transition: none;
+    cursor: default;
+  }
+  * {
+    transition: none;
+  }
+  /* All classes with transition */
+  .header__menu-link,
+  .gift__tab,
+  .gifts__card,
+  .gifts__card-title,
+  .footer__card,
+  .footer__card-title,
+  .footer__card-subtitle,
+  .footer__info-icon,
+  .footer__info-icon--active,
+  .footer__info-subtitle {
+    transition: none;
+  }
+}

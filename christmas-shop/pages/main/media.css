@@ -74,4 +74,61 @@
   }
 }
 
-
+@media (hover: none) and (pointer: coarse) {
+  /* Menu buttons */
+  .header__menu-item .header__menu-link:hover {
+    color: #181c29; 
+    background-color: transparent;
+    transition: none;
+    cursor: default;
+  }
+  /* Gift cards and footer cards */
+  .best-gifts__card:hover,
+  .best-gifts__card:hover .best-gifts__card-title,
+  .footer__card:hover .footer__card-subtitle,
+  .footer__card:hover .footer__card-title,
+  .footer__info-subtitle:hover {
+    color: #181c29; 
+    transition: none;
+    cursor: default;
+  }
+  /* Slider button */
+  .slider__buttons-right:hover {
+    background-image: url('../../assets/icons/arrow-right.svg');
+    background-color: transparent;
+    border: 1px solid #fff;
+    transition: none;
+    cursor: default;
+  }
+  /* Buttons */
+  .hero__content-link:hover,
+  .cta__content-link:hover {
+    color: #fff;
+    background-color: #181c29;
+    transition: none;
+    cursor: default;
+  }
+  /* SVG icons */
+  .footer__info-icon:hover .footer__info-icon--active {
+    stroke: #181c29; 
+    transition: none;
+    cursor: default;
+  }
+  * {
+    transition: none;
+  }
+  /* All classes with transition */
+  .header__menu-link,
+  .hero__content-link,
+  .best-gifts__card,
+  .best-gifts__card-title,
+  .slider__button,
+  .footer__card,
+  .footer__card-title,
+  .footer__card-subtitle,
+  .footer__info-icon,
+  .footer__info-icon--active,
+  .footer__info-subtitle {
+    transition: none;
+  }
+}

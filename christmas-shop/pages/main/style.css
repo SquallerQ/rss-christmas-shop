@@ -490,6 +490,7 @@ body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #181c29;
+  transition: color 0.5s ease;
 }
 /* cta styles */
 .cta {
@@ -652,6 +653,7 @@ body {
   text-transform: uppercase;
   text-align: center;
   color: #181c29;
+  transition: color 0.5s ease;
 }
 .footer__card-title {
   font-family: "Montserrat-SemiBold", sans-serif;
@@ -663,6 +665,7 @@ body {
   text-transform: uppercase;
   text-align: center;
   color: #181c29;
+  transition: color 0.5s ease;
 }
 
 .footer__info {
