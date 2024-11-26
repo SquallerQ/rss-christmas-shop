@@ -36,10 +36,6 @@
     padding: 0 60px;
     flex-wrap: wrap;
   }
-  .best-gifts__card {
-    flex: 0 1 calc(50% - 6px);
-    justify-content: center;
-  }
   .footer__cards {
     flex-direction: column;
     gap: 12px;
@@ -68,9 +64,6 @@
   }
   .best-gifts__cards {
     padding: 0 27px;
-  }
-  .best-gifts__card {
-    flex: 0 1 100%
   }
 }
 

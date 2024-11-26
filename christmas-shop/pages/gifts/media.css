@@ -56,9 +56,6 @@
   .gifts__cards {
     padding: 0 27px;
   }
-  .gifts__card {
-    flex: 0 1 100%
-  }
 }
 @media (hover: none) and (pointer: coarse) {
   /* Menu buttons */

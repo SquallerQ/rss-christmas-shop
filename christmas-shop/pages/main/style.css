@@ -439,8 +439,12 @@ body {
 .best-gifts__cards {
   display: flex;
   gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .best-gifts__card {
+  min-width: 310px;
+  width: 310px;
   border-radius: 20px;
   background-color: #ecf3f8;
   transition: all .3s ease;
