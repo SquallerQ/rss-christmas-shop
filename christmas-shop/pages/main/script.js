@@ -20,7 +20,7 @@ burgerButton.addEventListener("click", function () {
     // Turn off burger button
     burgerButton.classList.remove("burger-button--active");
     // Enable scroll
-    bodyForScrollAndShadow.style.overflow = "";
+    bodyForScroll.style.overflow = "";
   }
 });
 menuItemsList.forEach(function(item) {
@@ -29,5 +29,7 @@ menuItemsList.forEach(function(item) {
     menuHeader.classList.remove("header__menu-list--active");
     // Turn off burger button
     burgerButton.classList.remove("burger-button--active");
+    // Enable scroll
+    bodyForScroll.style.overflow = "";
   })
 }) 

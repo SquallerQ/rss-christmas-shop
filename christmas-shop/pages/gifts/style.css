@@ -120,7 +120,7 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.header__logo {
+.header__logo-container {
   display: flex;
   align-items: center;
   padding: 8px 20px;
