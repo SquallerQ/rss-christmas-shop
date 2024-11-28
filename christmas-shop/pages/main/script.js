@@ -33,3 +33,43 @@ menuItemsList.forEach(function(item) {
     bodyForScroll.style.overflow = "";
   })
 }) 
+
+// Slider
+const cardsContainer = document.querySelector(".slider__cards");
+const oneCard = document.querySelector(".slider__card");
+const leftButton = document.querySelector(".slider__buttons-left");
+const rightButton = document.querySelector(".slider__buttons-right");
+
+let b = 0;
+rightButton.addEventListener('click', function () {
+  const screenWidth = window.screen.width;
+  // const cardWidth = oneCard.offsetWidth;
+  const sliderWidth = cardsContainer.offsetWidth;
+  
+  // console.log(sliderWidth);
+  // console.log(screenWidth);
+
+  const scroll = (1993 - screenWidth) / 4;
+  let a = scroll;
+  
+  // console.log(screenWidth);
+  // console.log(cardWidth);
+  console.log(scroll);
+  
+  
+  // if (screenWidth > 768) {
+  //   a = screenWidth / 3 - 16;
+  // }
+  // console.log(b);
+  
+  // b = b + a;
+  // cardsContainer.style.marginLeft = `${-b}px`
+  cardsContainer.style.marginLeft = `${-a}px`;
+  // console.log(a);
+  // console.log(b);
+  a = scroll + scroll;
+  b = b + 135;
+  
+  
+})
+
