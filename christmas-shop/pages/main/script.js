@@ -36,39 +36,41 @@ menuItemsList.forEach(function(item) {
 
 // Slider
 const cardsContainer = document.querySelector(".slider__cards");
-const oneCard = document.querySelector(".slider__card");
+// const oneCard = document.querySelector(".slider__card");
 const leftButton = document.querySelector(".slider__buttons-left");
 const rightButton = document.querySelector(".slider__buttons-right");
+// const pageContainer = document.querySelector(".container")  
+// console.log(cardsContainer.offsetWidth);
 
-let b = 0;
+
+let scrollRelativeToStart = 0;
 rightButton.addEventListener('click', function () {
   const screenWidth = window.screen.width;
-  // const cardWidth = oneCard.offsetWidth;
-  const sliderWidth = cardsContainer.offsetWidth;
-  
-  // console.log(sliderWidth);
-  // console.log(screenWidth);
+  // let clickCounter;
+  let pageContainer;
+  let scrollOnClick;
+  if (screenWidth > 1400) {
+    pageContainer = 41;
+    scrollOnClick = (1993 - 1440) / 3 + pageContainer;
+  } else if (screenWidth > 1200) {
+    pageContainer = 41;
+    scrollOnClick = (1993 - screenWidth) / 3 + pageContainer;
+  } else if (screenWidth > 768) {
+    pageContainer = 8;
+    scrollOnClick = (1993 - screenWidth) / 3 + pageContainer;
+  } else {
+    pageContainer = 4;
+    scrollOnClick = (1993 - screenWidth) / 6 + pageContainer;
+  }
+  console.log(screenWidth);
 
-  const scroll = (1993 - screenWidth) / 4;
-  let a = scroll;
-  
-  // console.log(screenWidth);
-  // console.log(cardWidth);
-  console.log(scroll);
-  
-  
-  // if (screenWidth > 768) {
-  //   a = screenWidth / 3 - 16;
-  // }
-  // console.log(b);
-  
-  // b = b + a;
-  // cardsContainer.style.marginLeft = `${-b}px`
-  cardsContainer.style.marginLeft = `${-a}px`;
-  // console.log(a);
-  // console.log(b);
-  a = scroll + scroll;
-  b = b + 135;
+  oneStepScrolling = scrollOnClick;
+
+ 
+  scrollRelativeToStart = scrollRelativeToStart + oneStepScrolling;
+
+  cardsContainer.style.marginLeft = `${-scrollRelativeToStart}px`;
+
   
   
 })
