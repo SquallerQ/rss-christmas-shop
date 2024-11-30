@@ -23,35 +23,37 @@ burgerButton.addEventListener("click", function () {
     bodyForScroll.style.overflow = "";
   }
 });
-menuItemsList.forEach(function(item) {
-  item.addEventListener('click', function() {
+menuItemsList.forEach(function (item) {
+  item.addEventListener("click", function () {
     // Close menu
     menuHeader.classList.remove("header__menu-list--active");
     // Turn off burger button
     burgerButton.classList.remove("burger-button--active");
     // Enable scroll
     bodyForScroll.style.overflow = "";
-  })
-}) 
+  });
+});
 
 // Slider
-const cardsContainer = document.querySelector(".slider__cards");
 // const oneCard = document.querySelector(".slider__card");
+// console.log(cardsContainer.offsetWidth);
+// const pageContainer = document.querySelector(".container")
+const cardsContainer = document.querySelector(".slider__cards");
 const leftButton = document.querySelector(".slider__buttons-left");
 const rightButton = document.querySelector(".slider__buttons-right");
-// const pageContainer = document.querySelector(".container")  
-// console.log(cardsContainer.offsetWidth);
-
 
 let scrollRelativeToStart = 0;
-rightButton.addEventListener('click', function () {
-  const screenWidth = window.screen.width;
-  // let clickCounter;
+let scrollOnClick = 0;
+
+function calculateScrollProgress(symbol) {
+  const screenWidth = window.innerWidth;
+  const containerWidth = 1993;
+
   let pageContainer;
-  let scrollOnClick;
+
   if (screenWidth > 1400) {
     pageContainer = 41;
-    scrollOnClick = (1993 - 1440) / 3 + pageContainer;
+    scrollOnClick = (containerWidth - 1440) / 3 + pageContainer;
   } else if (screenWidth > 1200) {
     pageContainer = 41;
     scrollOnClick = (1993 - screenWidth) / 3 + pageContainer;
@@ -62,16 +64,62 @@ rightButton.addEventListener('click', function () {
     pageContainer = 4;
     scrollOnClick = (1993 - screenWidth) / 6 + pageContainer;
   }
+
+  oneStepScrolling = Math.trunc(scrollOnClick);
+  if (symbol === '+') {
+    scrollRelativeToStart = scrollRelativeToStart - oneStepScrolling;
+    console.log('minus');
+    
+  } else {
+    scrollRelativeToStart = scrollRelativeToStart + oneStepScrolling;
+    console.log('plus');
+
+  }
+
   console.log(screenWidth);
-
-  oneStepScrolling = scrollOnClick;
-
- 
-  scrollRelativeToStart = scrollRelativeToStart + oneStepScrolling;
-
+  
+  console.log(oneStepScrolling);
+  console.log(scrollRelativeToStart);
   cardsContainer.style.marginLeft = `${-scrollRelativeToStart}px`;
+}
 
-  
-  
-})
+rightButton.addEventListener("click", function () {
+  const _symbol = "-";
+  calculateScrollProgress(_symbol);
+});
 
+
+leftButton.addEventListener("click", function () {
+  const _symbol = '+'
+  calculateScrollProgress(_symbol);
+});
+
+
+
+
+
+// leftButton.addEventListener("click", function () {
+//   const screenWidth = window.screen.width;
+//   // let clickCounter;
+//   let pageContainer;
+//   let scrollOnClick;
+//   if (screenWidth > 1400) {
+//     pageContainer = 41;
+//     scrollOnClick = (1993 - 1440) / 3 + pageContainer;
+//   } else if (screenWidth > 1200) {
+//     pageContainer = 41;
+//     scrollOnClick = (1993 - screenWidth) / 3 + pageContainer;
+//   } else if (screenWidth > 768) {
+//     pageContainer = 8;
+//     scrollOnClick = (1993 - screenWidth) / 3 + pageContainer;
+//   } else {
+//     pageContainer = 4;
+//     scrollOnClick = (1993 - screenWidth) / 6 + pageContainer;
+//   }
+//   console.log(screenWidth);
+
+//   oneStepScrolling = scrollOnClick;
+
+//   scrollRelativeToStart = scrollRelativeToStart + oneStepScrolling;
+//   cardsContainer.style.marginLeft = `${scrollRelativeToStart}px`;
+// });
