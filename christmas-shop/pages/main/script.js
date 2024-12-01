@@ -52,11 +52,11 @@ function calculateScrollProgress(symbol) {
 
   if (screenWidth > 1400) {
     clickNeedToScrollEnd = 3
-    pageContainer = 41;
+    pageContainer = 82;
     scrollOnClick = (containerWidth - 1440) / clickNeedToScrollEnd + pageContainer;
   } else if (screenWidth > 1200) {
     clickNeedToScrollEnd = 3
-    pageContainer = 41;
+    pageContainer = 82;
     scrollOnClick = (1993 - screenWidth) / clickNeedToScrollEnd + pageContainer;
   } else if (screenWidth > 768) {
     clickNeedToScrollEnd = 3

@@ -403,7 +403,7 @@ body {
   transition: background-color 0.6s;
 }
 .slider__button:hover .slider__button-svg {
-  stroke: red;
+  stroke: #ff4646;
 }
 .slider__button--disabled {
   border: 1px solid rgba(255, 255, 255, 0.4);
