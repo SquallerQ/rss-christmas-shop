@@ -51,26 +51,27 @@ function calculateScrollProgress(symbol) {
   let pageContainer;
 
   if (screenWidth > 1400) {
-    clickNeedToScrollEnd = 3
+    clickNeedToScrollEnd = 3;
     pageContainer = 82;
-    scrollOnClick = (containerWidth - 1440) / clickNeedToScrollEnd + pageContainer;
+    scrollOnClick =
+      (containerWidth - 1440) / clickNeedToScrollEnd + pageContainer;
   } else if (screenWidth > 1200) {
-    clickNeedToScrollEnd = 3
+    clickNeedToScrollEnd = 3;
     pageContainer = 82;
     scrollOnClick = (1993 - screenWidth) / clickNeedToScrollEnd + pageContainer;
   } else if (screenWidth > 768) {
-    clickNeedToScrollEnd = 3
+    clickNeedToScrollEnd = 3;
     pageContainer = 8;
     scrollOnClick = (1993 - screenWidth) / clickNeedToScrollEnd + pageContainer;
   } else {
-    clickNeedToScrollEnd = 6
+    clickNeedToScrollEnd = 6;
     pageContainer = 4;
     scrollOnClick = (1993 - screenWidth) / clickNeedToScrollEnd + pageContainer;
   }
 
   oneStepScrolling = Math.trunc(scrollOnClick);
-  if (symbol === '+') {
-    scrollRelativeToStart = scrollRelativeToStart - oneStepScrolling;    
+  if (symbol === "+") {
+    scrollRelativeToStart = scrollRelativeToStart - oneStepScrolling;
   } else {
     scrollRelativeToStart = scrollRelativeToStart + oneStepScrolling;
   }
@@ -78,15 +79,14 @@ function calculateScrollProgress(symbol) {
   cardsContainer.style.marginLeft = `${-scrollRelativeToStart}px`;
 }
 function buttonsUpdate(maxClick) {
-
   console.log(maxClick);
-  // for Left button 
+  // for Left button
   if (clickCounter === 0) {
     leftButton.classList.add("slider__button--disabled");
   } else {
     leftButton.classList.remove("slider__button--disabled");
   }
-  // for Right button 
+  // for Right button
   if (clickCounter === maxClick) {
     rightButton.classList.add("slider__button--disabled");
   } else {
@@ -102,7 +102,7 @@ rightButton.addEventListener("click", function () {
   } else {
     clickCounterMax = 6;
   }
-  
+
   if (clickCounterMax > clickCounter) {
     clickCounter = clickCounter + 1;
     calculateScrollProgress(_symbol);
@@ -111,11 +111,11 @@ rightButton.addEventListener("click", function () {
 });
 
 leftButton.addEventListener("click", function () {
-  const _symbol = '+'
+  const _symbol = "+";
   if (clickCounter > 0) {
     clickCounter = clickCounter - 1;
     calculateScrollProgress(_symbol);
-    buttonsUpdate()
+    buttonsUpdate();
   }
 });
 
@@ -123,9 +123,40 @@ window.addEventListener("resize", function () {
   scrollRelativeToStart = 0;
   clickCounter = 0;
   cardsContainer.style.marginLeft = "0px";
-  
+
   const screenWidth = window.innerWidth;
   clickCounterMax = screenWidth > 768 ? 3 : 6;
 
   buttonsUpdate(clickCounterMax);
 });
+
+// Timer
+const NYDays = document.querySelector(".cta__timer-number--days");
+const NYHours = document.querySelector(".cta__timer-number--hours");
+const NYMinutes = document.querySelector(".cta__timer-number--minutes");
+const NYSeconds = document.querySelector(".cta__timer-number--seconds");
+
+function updateTimer() {
+  const now = new Date();
+  const newYear = new Date(Date.UTC(2025, 0, 1, 0, 0, 0, 0));
+  const untilNY = newYear - now;
+
+  const days = Math.floor(untilNY / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((untilNY % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((untilNY % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((untilNY % (1000 * 60)) / 1000);
+  
+  if (untilNY > 0) {
+    NYDays.textContent = days;
+    NYHours.textContent = hours;
+    NYMinutes.textContent = minutes;
+    NYSeconds.textContent = seconds;
+  } else {
+    NYDays.textContent = 0;
+    NYHours.textContent = 0;
+    NYMinutes.textContent = 0;
+    NYSeconds.textContent = 0;
+  }
+}
+setInterval(updateTimer, 1000);
+updateTimer();
