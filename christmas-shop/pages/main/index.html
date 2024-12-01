@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Christmas shop</title>
-  <link rel="shortcut icon" href="../../assets/favicon.ico">
+  <link rel="shortcut icon" href="../../assets/icons/snowflake.svg">
 
 
   <link rel="stylesheet" href="style.css">
@@ -51,6 +51,23 @@
           d="M16.8196 20.7684L3.75299 3.96836C3.44646 3.57425 3.72731 3 4.2266 3H6.70637C6.89152 3 7.06631 3.08548 7.17998 3.23164L20.2466 20.0316C20.5532 20.4258 20.2723 21 19.773 21H17.2933C17.1081 21 16.9333 20.9145 16.8196 20.7684Z"
           stroke-width="1.5" />
         <path d="M20 3L4 21" stroke-width="1.5" stroke-linecap="round" />
+      </g>
+    </symbol>
+
+    <symbol id="arrow-right" viewBox="0 0 24 24">
+      <g>
+        <svg width="24" height="24" fill="none">
+          <path d="M6 12H18.5M18.5 12L12.5 6M18.5 12L12.5 18" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </g>
+    </symbol>
+    <symbol id="arrow-left" viewBox="0 0 24 24">
+      <g>
+        <svg width="24" height="24" fill="none">
+          <path d="M18.5 12H6M6 12L12 6M6 12L12 18" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
       </g>
     </symbol>
   </svg>
@@ -170,8 +187,16 @@
                   </div>
                 </div>
                 <div class="slider__buttons">
-                  <button class="slider__button slider__buttons-left" ></button>
-                  <button class="slider__button slider__buttons-right"></button>
+                  <button class="slider__button slider__buttons-left slider__button--disabled">
+                    <svg class="slider__button-svg">
+                      <use xlink:href="#arrow-left"></use>
+                    </svg>
+                  </button>
+                  <button class="slider__button slider__buttons-right">
+                    <svg class="slider__button-svg">
+                      <use xlink:href="#arrow-right"></use>
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
