@@ -79,7 +79,6 @@ function calculateScrollProgress(symbol) {
   cardsContainer.style.marginLeft = `${-scrollRelativeToStart}px`;
 }
 function buttonsUpdate(maxClick) {
-  console.log(maxClick);
   // for Left button
   if (clickCounter === 0) {
     leftButton.classList.add("slider__button--disabled");
@@ -142,10 +141,12 @@ function updateTimer() {
   const untilNY = newYear - now;
 
   const days = Math.floor(untilNY / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((untilNY % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const hours = Math.floor(
+    (untilNY % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
   const minutes = Math.floor((untilNY % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((untilNY % (1000 * 60)) / 1000);
-  
+
   if (untilNY > 0) {
     NYDays.textContent = days;
     NYHours.textContent = hours;
@@ -160,3 +161,37 @@ function updateTimer() {
 }
 setInterval(updateTimer, 1000);
 updateTimer();
+
+// Gifts
+async function fetchCardsFromJSON() {
+  try {
+    const response = await fetch("../gifts.json");
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status}`);
+    }
+    const cards = await response.json();
+    displayCards(cards);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+function displayCards(cards) {
+  const randomNumbersArray = [];
+  for (let i = 0; i < 4; i++) {
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * max);
+    }
+    const randomNumber = getRandomInt(cards.length);
+    console.log(randomNumber);
+
+    if (!randomNumbersArray.includes(randomNumber)) {
+      randomNumbersArray.push(randomNumber);
+    } else {
+      i--
+    }
+  }
+  console.log(randomNumbersArray);
+}
+
+fetchCardsFromJSON();
