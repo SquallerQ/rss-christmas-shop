@@ -479,8 +479,7 @@ body {
 }
 .best-gifts__card-info {
   min-height: 112px;
-  padding-top: 20px;
-  padding-left: 20px;
+  padding: 20px;
   background-color: #fff;
   border-radius: 20px;
 }

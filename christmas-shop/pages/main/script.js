@@ -177,7 +177,7 @@ async function fetchCardsFromJSON() {
 }
 
 function displayCards(cards) {
-  const randomNumbersArray = [];
+  const fourRandomNumbersArray = [];
   for (let i = 0; i < 4; i++) {
     function getRandomInt(max) {
       return Math.floor(Math.random() * max);
@@ -185,13 +185,50 @@ function displayCards(cards) {
     const randomNumber = getRandomInt(cards.length);
     console.log(randomNumber);
 
-    if (!randomNumbersArray.includes(randomNumber)) {
-      randomNumbersArray.push(randomNumber);
+    
+    if (!fourRandomNumbersArray.includes(cards[randomNumber])) {
+      // console.log(cards[i]);
+      fourRandomNumbersArray.push(cards[randomNumber]);
     } else {
-      i--
+      i--;
     }
   }
-  console.log(randomNumbersArray);
+  console.log(fourRandomNumbersArray);
+  
+  const cardsContainer = document.querySelector(".best-gifts__cards");
+
+  for (let i = 0; i < fourRandomNumbersArray.length; i++) {
+    let cardSubtitleColorClass;
+    let cardImageClass;
+    if (fourRandomNumbersArray[i].category === 'For Health') {
+      cardSubtitleColorClass = "best-gifts__card-subtitle--health";
+      cardImageClass = "../../assets/images/gift-for-health.png"
+    } else if (fourRandomNumbersArray[i].category === "For Harmony") {
+      cardSubtitleColorClass = "best-gifts__card-subtitle--harmony";
+      cardImageClass = "../../assets/images/gift-for-harmony.png";
+    } else {
+      cardSubtitleColorClass = ""
+      cardImageClass = "../../assets/images/gift-for-work.png";
+    }
+      console.log(fourRandomNumbersArray[i].category);
+    
+    const card = document.createElement("div");
+
+    card.innerHTML = `<div class="best-gifts__card">
+                  <div class="best-gifts__card-image">
+                    <img src="${cardImageClass}" alt="card img">
+                  </div>
+                  <div class="best-gifts__card-info">
+
+                    <h4 class="best-gifts__card-subtitle ${cardSubtitleColorClass}">${fourRandomNumbersArray[i].category}</h4>
+                    <h3 class="best-gifts__card-title">${fourRandomNumbersArray[i].name}</h3>
+                  </div>
+                </div>`;
+
+    cardsContainer.append(card);
+    // console.log(cardsContainer);
+  }
+
 }
 
 fetchCardsFromJSON();
