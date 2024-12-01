@@ -33,3 +33,41 @@ menuItemsList.forEach(function (item) {
     bodyForScroll.style.overflow = "";
   });
 });
+
+// Gift Cards
+async function fetchCardsFromJSON() {
+  const response = await fetch("../gifts.json");
+  try {
+    if (!response.ok) {
+      throw new Error("Error");
+    } else {
+      const cards = await response.json();
+      displayCards(cards);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+fetchCardsFromJSON();
+
+function displayCards(cards) {
+  console.log(cards);
+
+  
+}
+
+
+
+
+const allTabButtons = document.querySelectorAll("[data-tab]");
+console.log(allTabButtons);
+const allTabContent = document.querySelectorAll("[data-tab-content]");
+console.log(allTabContent);
+allTabButtons.forEach(function (item) {
+  item.addEventListener('click', function() {
+    allTabContent.forEach(function (item) {
+      item.classList.add("gift__cards--hidden");
+    });
+  })
+  
+})

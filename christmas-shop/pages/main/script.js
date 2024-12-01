@@ -185,38 +185,33 @@ function displayCards(cards) {
     const randomNumber = getRandomInt(cards.length);
     console.log(randomNumber);
 
-    
     if (!fourRandomNumbersArray.includes(cards[randomNumber])) {
-      // console.log(cards[i]);
       fourRandomNumbersArray.push(cards[randomNumber]);
     } else {
       i--;
     }
   }
-  console.log(fourRandomNumbersArray);
-  
   const cardsContainer = document.querySelector(".best-gifts__cards");
 
   for (let i = 0; i < fourRandomNumbersArray.length; i++) {
     let cardSubtitleColorClass;
-    let cardImageClass;
-    if (fourRandomNumbersArray[i].category === 'For Health') {
+    let cardImagePath;
+    if (fourRandomNumbersArray[i].category === "For Health") {
       cardSubtitleColorClass = "best-gifts__card-subtitle--health";
-      cardImageClass = "../../assets/images/gift-for-health.png"
+      cardImagePath = "../../assets/images/gift-for-health.png";
     } else if (fourRandomNumbersArray[i].category === "For Harmony") {
       cardSubtitleColorClass = "best-gifts__card-subtitle--harmony";
-      cardImageClass = "../../assets/images/gift-for-harmony.png";
+      cardImagePath = "../../assets/images/gift-for-harmony.png";
     } else {
-      cardSubtitleColorClass = ""
-      cardImageClass = "../../assets/images/gift-for-work.png";
+      cardSubtitleColorClass = "";
+      cardImagePath = "../../assets/images/gift-for-work.png";
     }
-      console.log(fourRandomNumbersArray[i].category);
-    
+
     const card = document.createElement("div");
 
     card.innerHTML = `<div class="best-gifts__card">
                   <div class="best-gifts__card-image">
-                    <img src="${cardImageClass}" alt="card img">
+                    <img src="${cardImagePath}" alt="card img">
                   </div>
                   <div class="best-gifts__card-info">
 
@@ -226,9 +221,7 @@ function displayCards(cards) {
                 </div>`;
 
     cardsContainer.append(card);
-    // console.log(cardsContainer);
   }
-
 }
 
 fetchCardsFromJSON();
