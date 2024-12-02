@@ -35,14 +35,31 @@ menuItemsList.forEach(function (item) {
 });
 
 // Gift Cards
-async function fetchCardsFromJSON() {
+async function fetchCardsFromJSON(container, buttonName) {
+  console.log(container);
+  console.log(buttonName);
+  
+
   const response = await fetch("../gifts.json");
   try {
     if (!response.ok) {
       throw new Error("Error");
     } else {
       const cards = await response.json();
-      displayCards(cards);
+      filteredCards = cards.filter(card => card.category.toLowerCase() === buttonName)
+      if (filteredCards.length > 0) {
+        displayCards(filteredCards, container);
+        // displayCards(cards, container);
+      } else {
+        displayCards(cards, container);
+        
+      }
+      // if (buttonName === 'for work') {
+      //   console.log(true);
+      //   displayCards(filteredCards, container);
+        
+      // } else if (buttonName === "for health") {
+      // }
     }
   } catch (error) {
     console.error(error);
@@ -50,24 +67,66 @@ async function fetchCardsFromJSON() {
 }
 fetchCardsFromJSON();
 
-function displayCards(cards) {
-  console.log(cards);
+function displayCards(cards, container) {
+  const cardsContainer = document.querySelector(".gifts__cards");
+  // const cardsContainer = document.getElementById(`tab-${id}`);
+  console.log(cardsContainer);
 
-  
+  for (let i = 0; i < cards.length; i++) {
+    let cardSubtitleColorClass;
+    let cardImagePath;
+    if (cards[i].category === "For Health") {
+      cardSubtitleColorClass = "gifts__card-subtitle--health";
+      cardImagePath = "../../assets/images/gift-for-health.png";
+    } else if (cards[i].category === "For Harmony") {
+      cardSubtitleColorClass = "gifts__card-subtitle--harmony";
+      cardImagePath = "../../assets/images/gift-for-harmony.png";
+    } else {
+      cardSubtitleColorClass = "";
+      cardImagePath = "../../assets/images/gift-for-work.png";
+    }
+
+    const card = document.createElement("div");
+
+    card.innerHTML = `<div class="gifts__card">
+                  <div class="gifts__card-image">
+                    <img src="${cardImagePath}" alt="card img">
+                  </div>
+                  <div class="gifts__card-info">
+
+                    <h4 class="gifts__card-subtitle ${cardSubtitleColorClass}">${cards[i].category}</h4>
+                    <h3 class="gifts__card-title">${cards[i].name}</h3>
+                  </div>
+                </div>`;
+
+    if (container === undefined) {
+      cardsContainer.append(card);
+    } else {
+      container.append(card);
+    }
+  }
 }
 
-
-
-
 const allTabButtons = document.querySelectorAll("[data-tab]");
-console.log(allTabButtons);
 const allTabContent = document.querySelectorAll("[data-tab-content]");
-console.log(allTabContent);
 allTabButtons.forEach(function (item) {
-  item.addEventListener('click', function() {
-    allTabContent.forEach(function (item) {
-      item.classList.add("gift__cards--hidden");
+  item.addEventListener("click", function () {
+    allTabButtons.forEach((button) => button.classList.remove("gift__tab--active"));
+    this.classList.add("gift__tab--active");
+
+    allTabContent.forEach(function (container) {
+      container.classList.add("gift__cards--hidden");
     });
-  })
-  
-})
+    const thisTabContent = document.querySelector("#" + this.dataset.tab);
+    const buttonName = this.innerHTML;
+     console.log(buttonName);
+     
+    console.log(thisTabContent);
+
+    thisTabContent.classList.remove("gift__cards--hidden");
+
+    thisTabContent.innerHTML = "";
+
+    fetchCardsFromJSON(thisTabContent, buttonName);
+  });
+});
