@@ -2,6 +2,9 @@
 .burger-menu {
   display: none;
 }
+.scroll-to-top {
+    display: none; 
+}
 @media (max-width: 768px) {
   .header__logo {
     /* position: fixed; */
@@ -154,3 +157,40 @@
     transition: none;
   }
 }
+
+
+@media (max-width: 768px) {
+.scroll-to-top {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+
+  width: 56px;
+  height: 56px;
+
+  background-color: #fff;
+
+  background-image: url('../../assets/icons/arrow-up.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  
+  border: 1px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+
+  transition: all 0.3s ease, ;
+
+}
+.scroll-to-top:hover {
+  border: 1px solid #ff4646;
+}
+  .scroll-to-top.visible {
+    display: flex;
+  }
+}
+
+

@@ -203,3 +203,22 @@ window.addEventListener("click", (event) => {
     closeModal();
   }
 });
+
+
+
+const scrollToTop = document.getElementById("scroll-to-top");
+window.addEventListener("scroll", function () {
+  const scrollPosition = window.scrollY;
+ if (scrollPosition > 300 && window.innerWidth <= 768) {
+   scrollToTopButton.classList.add("visible");
+ } else {
+   scrollToTopButton.classList.remove("visible");
+ }
+});
+
+scrollToTop.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", 
+  });
+});
