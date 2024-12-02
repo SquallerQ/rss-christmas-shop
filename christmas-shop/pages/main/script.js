@@ -221,7 +221,93 @@ function displayCards(cards) {
                 </div>`;
 
     cardsContainer.append(card);
+                    card.addEventListener("click", function () {
+                      openModal(cards[i]);
+                    });
   }
 }
 
 fetchCardsFromJSON();
+
+
+// Modal
+
+const modal = document.getElementById("modal");
+
+const modalSubtitle = document.getElementById("modal-subtitle");
+const modalImg = document.getElementById("modal-img");
+const modalTitle = document.getElementById("modal-title");
+const modalDescription = document.getElementById("modal-description");
+const modalLive = document.getElementById("rating__container--live");
+const modalCreate = document.getElementById("rating__container--create");
+const modalLove = document.getElementById("rating__container--love");
+const modalDream = document.getElementById("rating__container--dream");
+
+
+const closeModalBtn = document.querySelector(".modal-close");
+
+function openModal(cardData) {
+  console.log(cardData);
+
+  modal.style.display = "block";
+
+  modalSubtitle.textContent = cardData.category;
+  if (cardData.category.toLowerCase() === "for work") {
+    modalSubtitle.style.color = "#4361ff";
+    modalImg.src = "../../assets/images/gift-for-work.png";
+  } else if (cardData.category.toLowerCase() === "for health") {
+    modalSubtitle.style.color = "#06a44f";
+    modalImg.src = "../../assets/images/gift-for-health.png";
+  } else if (cardData.category.toLowerCase() === "for harmony") {
+    modalSubtitle.style.color = "#ff43f7";
+    modalImg.src = "../../assets/images/gift-for-harmony.png";
+  }
+  modalTitle.textContent = cardData.name;
+  modalDescription.textContent = cardData.description;
+  modalLive.textContent = cardData.superpowers.live
+  modalCreate.textContent = cardData.superpowers.create;
+  modalLove.textContent = cardData.superpowers.love;
+  modalDream.textContent = cardData.superpowers.dream;
+
+  let numberToStarDream = modalDream.textContent[1]
+  let numberToStarLove = modalLove.textContent[1]
+  let numberToStarCreate = modalCreate.textContent[1]
+  let numberToStarLive = modalLive.textContent[1]
+  console.log(numberToStarDream);
+  
+  
+  const dreamStars = document.querySelectorAll('.dream')
+  for (let i = 0; i < numberToStarDream; i++) { 
+    dreamStars[i].style.opacity = "1";
+  }
+  const loveStars = document.querySelectorAll(".love");
+  for (let i = 0; i < numberToStarLove; i++) {
+    loveStars[i].style.opacity = "1";
+  }
+    const createStars = document.querySelectorAll(".create");
+    for (let i = 0; i < numberToStarCreate; i++) {
+      createStars[i].style.opacity = "1";
+    }
+
+        const liveStars = document.querySelectorAll(".live");
+        for (let i = 0; i < numberToStarLive; i++) {
+          liveStars[i].style.opacity = "1";
+        }
+
+  document.body.classList.add("scroll-block");
+  
+}
+
+function closeModal() {
+  modal.style.display = "none";
+  document.body.classList.remove("scroll-block");
+  numberToStar = ''
+}
+
+closeModalBtn.addEventListener("click", closeModal);
+
+window.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    closeModal();
+  }
+});
