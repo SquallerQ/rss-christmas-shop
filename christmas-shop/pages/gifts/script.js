@@ -208,11 +208,13 @@ window.addEventListener("click", (event) => {
 
 const scrollToTop = document.getElementById("scroll-to-top");
 window.addEventListener("scroll", function () {
-  const scrollPosition = window.scrollY;
+const scrollPosition = window.scrollY;
  if (scrollPosition > 300 && window.innerWidth <= 768) {
-   scrollToTopButton.classList.add("visible");
+   scrollToTop.classList.add("visible");
+   scrollToTop.classList.remove("hidden");
  } else {
-   scrollToTopButton.classList.remove("visible");
+   scrollToTop.classList.add("hidden");
+   scrollToTop.classList.remove("visible");
  }
 });
 
