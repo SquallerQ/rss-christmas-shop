@@ -249,7 +249,7 @@ const closeModalBtn = document.querySelector(".modal-close");
 function openModal(cardData) {
   console.log(cardData);
 
-  modal.style.display = "block";
+  modal.style.display = "flex";
 
   modalSubtitle.textContent = cardData.category;
   if (cardData.category.toLowerCase() === "for work") {
