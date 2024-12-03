@@ -227,7 +227,7 @@ window.addEventListener("click", (event) => {
 const scrollToTop = document.getElementById("scroll-to-top");
 window.addEventListener("scroll", function () {
 const scrollPosition = window.scrollY;
- if (scrollPosition > 300 && window.innerWidth <= 768) {
+ if (scrollPosition > 299 && window.innerWidth <= 768) {
    scrollToTop.classList.add("visible");
    scrollToTop.classList.remove("hidden");
  } else {
