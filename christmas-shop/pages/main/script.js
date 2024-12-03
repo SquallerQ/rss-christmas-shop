@@ -222,7 +222,7 @@ function displayCards(cards) {
 
     cardsContainer.append(card);
                     card.addEventListener("click", function () {
-                      openModal(cards[i]);
+                      openModal(fourRandomNumbersArray[i]);
                     });
   }
 }
