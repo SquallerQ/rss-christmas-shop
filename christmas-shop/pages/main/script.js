@@ -301,7 +301,25 @@ function openModal(cardData) {
 function closeModal() {
   modal.style.display = "none";
   document.body.classList.remove("scroll-block");
-  numberToStar = ''
+  
+  
+    const dreamStars = document.querySelectorAll(".dream");
+    for (let i = 0; i < dreamStars.length; i++) {
+      dreamStars[i].style.opacity = "0.1";
+    }
+    const loveStars = document.querySelectorAll(".love");
+    for (let i = 0; i < loveStars.length; i++) {
+      loveStars[i].style.opacity = "0.1";
+    }
+    const createStars = document.querySelectorAll(".create");
+    for (let i = 0; i < createStars.length; i++) {
+      createStars[i].style.opacity = "0.1";
+    }
+
+    const liveStars = document.querySelectorAll(".live");
+    for (let i = 0; i < liveStars.length; i++) {
+      liveStars[i].style.opacity = "0.1";
+    }
 }
 
 closeModalBtn.addEventListener("click", closeModal);
