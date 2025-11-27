@@ -3,15 +3,7 @@
   display: none;
 }
 @media (max-width: 768px) {
-  .header__logo {
-    /* position: fixed; */
-    /* z-index: 99; */
-  }
   .burger-button {
-    /* position: fixed; */
-    /* top: 12px; */
-    /* right: 9px; */
-
     display: flex;
     flex-direction: column;
     justify-content: center; 
@@ -32,6 +24,7 @@
     background-color: #181c29;
     z-index: 100;
     transition: all 0.3s ease;
+
   }
   .burger-button--active {
     gap: 0;
@@ -81,20 +74,15 @@
     margin-left: 0px;
   }
 }
-
 /* screen > w768 */
 @media (max-width: 1200px) {
   .container {
     padding: 0 8px;
   }
-  .about__content {
-    padding: 46px 60px;
-  }
 }
 @media (max-width: 1100px) {
-  .best-gifts__cards {
+  .gifts__cards {
     padding: 0 60px;
-    flex-wrap: wrap;
   }
   .footer__cards {
     flex-direction: column;
@@ -110,23 +98,17 @@
     margin-left: 0;
   }
 }
-/* screen > w380 */
 @media (max-width: 600px) {
-  .about__inner {
-    flex-direction: column;
+  .gift__tabs {
+    gap: 0;
   }
-  .about__content {
-    padding: 60px 20px;
-    width: 100%;
+  .gift__tab {
+    padding: 12px 8px;
   }
-  .about__image {
-    width: 100%;
-  }
-  .best-gifts__cards {
+  .gifts__cards {
     padding: 0 27px;
   }
 }
-
 @media (hover: none) and (pointer: coarse) {
   /* Menu buttons */
   .header__menu-item .header__menu-link:hover {
@@ -135,37 +117,19 @@
     transition: none;
     cursor: default;
   }
-  /* Slider buttons*/
-  .slider__button:hover {
-    background-color: transparent;
-    border: 1px solid #fff;
+  /* Gift tab */
+  .gift__tab:hover {
+    background: transparent;
     transition: none;
-  }
-  .slider__button:hover .slider__button-svg {
-    stroke: #fff;
-    transition: none;
-  }
-  .slider__button--disabled:hover {
-    border: 1px solid rgba(255, 255, 255, 0.4);
-  }
-  .slider__button--disabled:hover .slider__button-svg {
-    stroke: rgba(255, 255, 255, 0.4)
+    cursor: default;
   }
   /* Gift cards and footer cards */
-  .best-gifts__card:hover,
-  .best-gifts__card:hover .best-gifts__card-title,
+  .gifts__card:hover,
+  .gifts__card:hover .gifts__card-title,
   .footer__card:hover .footer__card-subtitle,
   .footer__card:hover .footer__card-title,
   .footer__info-subtitle:hover {
     color: #181c29; 
-    transition: none;
-    cursor: default;
-  }
-  /* Buttons */
-  .hero__content-link:hover,
-  .cta__content-link:hover {
-    color: #fff;
-    background-color: #181c29;
     transition: none;
     cursor: default;
   }
@@ -180,10 +144,9 @@
   }
   /* All classes with transition */
   .header__menu-link,
-  .hero__content-link,
-  .best-gifts__card,
-  .best-gifts__card-title,
-  .slider__button,
+  .gift__tab,
+  .gifts__card,
+  .gifts__card-title,
   .footer__card,
   .footer__card-title,
   .footer__card-subtitle,
@@ -191,5 +154,42 @@
   .footer__info-icon--active,
   .footer__info-subtitle {
     transition: none;
+  }
+}
+
+
+@media (max-width: 768px) {
+.scroll-to-top {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+
+  width: 56px;
+  height: 56px;
+
+  background-color: #fff;
+
+  background-image: url('../../assets/icons/arrow-up.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  
+  border: 1px solid #ff4646;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+
+  transition: all 0.3s ease, ;
+
+}
+.scroll-to-top.hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+.scroll-to-top.visible {
+  visibility: visible;
+  opacity: 1;
   }
 }
