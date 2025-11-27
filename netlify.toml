@@ -1,0 +1,9 @@
+[[redirects]]
+  from = "/"
+  to = "/pages/main/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/pages/main/index.html"
+  status = 200
