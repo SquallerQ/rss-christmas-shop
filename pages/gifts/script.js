@@ -24,28 +24,57 @@ menuItemsList.forEach(function (item) {
 });
 
 // Gift Cards
+window.addEventListener("DOMContentLoaded", async function () {
+  const tabs = [
+    { name: "all", selector: "#tab-1" },
+    { name: "for work", selector: "#tab-2" },
+    { name: "for health", selector: "#tab-3" },
+    { name: "for harmony", selector: "#tab-4" },
+  ];
+
+  for (let tab of tabs) {
+    const tabContent = document.querySelector(tab.selector);
+    if (tabContent) {
+      await fetchCardsFromJSON(tabContent, tab.name);
+    }
+  }
+});
+
+const tabCache = {};
+const tabDataCache = {};
+
 async function fetchCardsFromJSON(tabContainer, tabName) {
+  if (tabCache[tabName]) {
+    displayCachedCards(tabContainer, tabName);
+    return;
+  }
+
   const response = await fetch("../gifts.json");
   try {
     if (!response.ok) {
       throw new Error("Error");
     } else {
       const cards = await response.json();
-      filteredCards = cards.filter(card => card.category.toLowerCase() === tabName)
+      const filteredCards = cards.filter(
+        (card) => card.category.toLowerCase() === tabName
+      );
+
       if (filteredCards.length > 0) {
-        displayCards(filteredCards, tabContainer);
+        displayCards(filteredCards, tabContainer, tabName);
       } else {
-        displayCards(cards, tabContainer); 
+        displayCards(cards, tabContainer, tabName);
       }
     }
   } catch (error) {
     console.error(error);
   }
 }
-fetchCardsFromJSON();
 
-function displayCards(cards, tabContainer) {
-  const cardsContainer = document.querySelector(".gifts__cards");
+function displayCards(cards, tabContainer, tabName) {
+  const cardsContainer =
+    tabContainer || document.querySelector(".gifts__cards");
+
+  cardsContainer.innerHTML = "";
 
   for (let i = 0; i < cards.length; i++) {
     let cardSubtitleColorClass;
@@ -62,34 +91,49 @@ function displayCards(cards, tabContainer) {
     }
 
     const card = document.createElement("div");
-
     card.innerHTML = `<div class="gifts__card">
                   <div class="gifts__card-image">
                     <img src="${cardImagePath}" alt="card img">
                   </div>
                   <div class="gifts__card-info">
-
                     <h4 class="gifts__card-subtitle ${cardSubtitleColorClass}">${cards[i].category}</h4>
                     <h3 class="gifts__card-title">${cards[i].name}</h3>
                   </div>
                 </div>`;
 
-                card.addEventListener("click", function () {
-                  openModal(cards[i]);
-                });
-    if (tabContainer === undefined) {
-      cardsContainer.append(card);
-    } else {
-      tabContainer.append(card);
-    }
+    card.addEventListener("click", function () {
+      openModal(cards[i]);
+    });
+
+    cardsContainer.append(card);
   }
+
+  if (tabName) {
+    tabCache[tabName] = cardsContainer.innerHTML;
+    tabDataCache[tabName] = cards;
+  }
+}
+
+function displayCachedCards(tabContainer, tabName) {
+  tabContainer.innerHTML = tabCache[tabName];
+
+  const cardElements = tabContainer.querySelectorAll(".gifts__card");
+  const cardsData = tabDataCache[tabName];
+
+  cardElements.forEach((card, index) => {
+    card.addEventListener("click", function () {
+      openModal(cardsData[index]);
+    });
+  });
 }
 
 const allTabButtons = document.querySelectorAll("[data-tab]");
 const allTabContent = document.querySelectorAll("[data-tab-content]");
 allTabButtons.forEach(function (item) {
   item.addEventListener("click", function () {
-    allTabButtons.forEach((button) => button.classList.remove("gift__tab--active"));
+    allTabButtons.forEach((button) =>
+      button.classList.remove("gift__tab--active")
+    );
     this.classList.add("gift__tab--active");
 
     allTabContent.forEach(function (container) {
@@ -99,12 +143,10 @@ allTabButtons.forEach(function (item) {
     const buttonName = this.innerHTML;
 
     thisTabContent.classList.remove("gift__cards--hidden");
-    thisTabContent.innerHTML = "";
 
     fetchCardsFromJSON(thisTabContent, buttonName);
   });
 });
-
 
 // Modal
 

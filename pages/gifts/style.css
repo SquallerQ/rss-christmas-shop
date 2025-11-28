@@ -241,6 +241,7 @@ body {
   flex-wrap: wrap;
   gap: 12px;
   justify-content: center;
+  min-height: 450px;
 }
 .gift__cards--hidden {
   display: none;
